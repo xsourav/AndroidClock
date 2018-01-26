@@ -6,19 +6,40 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.xsourav.androidclock.MainActivity">
-
-    <TextView
-        android:id="@+id/time_display"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="TextView" />
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_weight="1"
+            android:text="TIME:"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="50sp" />
+           <TextView
+               android:layout_weight="1"
+                android:id="@+id/time_display"
+                android:layout_width="match_parent"
+                android:layout_height="60sp"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="50sp"
+                tools:text="7:25 AM" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/instruction"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/time_display"
-        android:text="set as given in the above box" />
+        android:text="Set time as given in the above box within 30 seconds"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="20sp" />
 
     <TimePicker
         android:id="@+id/timePicker"
@@ -26,7 +47,14 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/instruction"
         android:layout_weight="1"
-        android:headerBackground="@android:color/background_light"
         android:timePickerMode="clock" />
+    <Button
+        android:id="@+id/timeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#a3e676"
+        android:textSize="25sp"
+        android:text="NEW TIME" />
 
 </LinearLayout>
